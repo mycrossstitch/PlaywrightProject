@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  tests:
+    build: .
+    container_name: playwright-tests
+    volumes:
+      - ./:/app
+      - ./allure-results:/app/allure-results
+      - ./allure-report:/app/allure-report
+    working_dir: /app
+    environment:
+      - PYTHONPATH=/app
+      - ALLURE_RESULTS_PATH=/app/allure-results
+      - ALLURE_REPORT_PATH=/app/allure-report
+    tty: true
+    stdin_open: true
+    command: /bin/sh -c "ls -la && pytest -n 4 -sv --alluredir=allure-results"
+
