@@ -15,5 +15,5 @@ services:
       - ALLURE_REPORT_PATH=/app/allure-report
     tty: true
     stdin_open: true
-    command: /bin/sh -c "ls -la && pytest -n 4 -sv --alluredir=allure-results"
+    command: /bin/sh -c "ls -la && pytest -n auto -sv --alluredir=allure-results"
 
