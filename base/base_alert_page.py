@@ -31,12 +31,12 @@ class BaseAlertPage(BasePage):
         button = self.page.locator(self.BUTTON)
         expect(button).to_be_visible()
 
-
     @allure.step("Check that the alert displays text '{expected_text}'")
     def check_alert_text(self, expected_text: str):
         def accept_alert(alert: Dialog):
-            assert alert.message == expected_text, f"Expected alert text '{expected_text}', got '{alert.message}'"
+            assert (
+                alert.message == expected_text
+            ), f"Expected alert text '{expected_text}', got '{alert.message}'"
             alert.accept()
+
         self.page.on("dialog", accept_alert)
-
-

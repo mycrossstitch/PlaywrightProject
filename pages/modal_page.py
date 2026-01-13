@@ -11,7 +11,6 @@ class ModalPage(BaseModalPage):
     CHECKBOX = "#id_checkbox_0"
     SEND = "#exampleModal button:has-text('Send')"
 
-
     # ---------- Actions ----------
 
     @allure.step("Select checkbox")
@@ -24,9 +23,6 @@ class ModalPage(BaseModalPage):
 
     # ---------- Assertions ----------
 
-
-
-
     @allure.step("Check checkbox exists")
     def check_checkbox_exists(self):
         expect(self.page.locator(self.CHECKBOX)).to_be_visible()
@@ -35,12 +31,6 @@ class ModalPage(BaseModalPage):
     def check_send_button(self):
         expect(self.page.locator(self.SEND)).to_be_visible()
 
-
-
     @allure.step("Check Cancel button exists")
     def check_cancel_button(self):
         expect(self.page.locator(self.CANCEL)).to_be_visible()
-
-
-
-

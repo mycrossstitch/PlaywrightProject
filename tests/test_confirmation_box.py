@@ -11,6 +11,7 @@ def test_check_button_exists(page: Page):
     confirm_page.open()
     confirm_page.check_button_exists()
 
+
 @allure.feature("Alerts")
 @allure.story("Confirmation Box")
 @allure.title("Clicking confirmation button shows alert with correct text")
@@ -30,6 +31,7 @@ def test_confirmation_box_ok(page: Page):
     confirm_page.accept_alert()
     confirm_page.click_button()
     confirm_page.check_result_text("Ok")
+
 
 @allure.feature("Alerts")
 @allure.story("Confirmation Box")

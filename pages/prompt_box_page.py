@@ -4,6 +4,7 @@ from playwright.sync_api import expect
 from config.links import Links
 from base.base_alert_page import BaseAlertPage
 
+
 class PromptBoxPage(BaseAlertPage):
 
     url = Links.PROMPT_BOX_PAGE
